@@ -9,7 +9,7 @@ const ProfileWrap = styled.aside<{ status: boolean }>`
     position: absolute;
     top: 43px;
     right: 0;
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.85);
     ${({ status }) =>
         status
             ? css`

@@ -55,9 +55,13 @@ const ProfileArrow = styled.div`
     }
 `;
 
-function ProfileBtn({ setProfileState }: any) {
+interface IProps {
+    onClick: () => void;
+}
+
+function ProfileBtn({ onClick }: IProps) {
     return (
-        <ProfileBtnWrap onClick={() => setProfileState((state: boolean) => !state)}>
+        <ProfileBtnWrap onClick={onClick}>
             <ProfileBtnImg />
             <ProfileName>Gune</ProfileName>
             <ProfileArrow />

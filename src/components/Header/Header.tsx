@@ -29,6 +29,7 @@ const HeaderLogo = styled.div`
 
 function Header() {
     const [profileState, setProfileState] = useState<boolean>(false);
+    const onClick = () => setProfileState(!profileState);
 
     return (
         <HeaderArea>
@@ -36,7 +37,7 @@ function Header() {
                 <HeaderLogo>
                     <strong>Gune</strong>'s Scheduler
                 </HeaderLogo>
-                <ProfileBtn setProfileState={setProfileState} />
+                <ProfileBtn onClick={onClick} />
                 <Profile status={profileState} />
             </HeaderInner>
         </HeaderArea>

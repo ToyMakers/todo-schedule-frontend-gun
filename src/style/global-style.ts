@@ -12,12 +12,13 @@ const GlobalStyle = createGlobalStyle`
     }
     body {
         font-weight:400;
-        background-color:#FFF;
+        color:#eee;
+        background-color:#000;
         -webkit-text-size-adjust: none;
     }
     img { max-width:100%; max-height:100%;}
     a {text-decoration:none; color:inherit; }
-    button{border:0;background:transparent;}
+    button{border:0;color:#eee;background:transparent; cursor:pointer;}
 `;
 
 export default GlobalStyle;

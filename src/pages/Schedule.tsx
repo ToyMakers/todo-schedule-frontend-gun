@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { SelectDate } from '../components/Scheduler';
 
 function Schedule() {
     return (
         <div>
-            <h1>Scheduler OPEN</h1>
+            <SelectDate />
             <Link to="/join">가입이동</Link>
         </div>
     );
