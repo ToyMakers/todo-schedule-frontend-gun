@@ -2,18 +2,18 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Schedule, Join } from './pages';
-import Inner from './components/common/Inner';
+import { Inner, Main } from './components/common';
 
 const App = () => {
     return (
         <>
             <Header />
-            <Inner>
+            <Main>
                 <Switch>
                     <Route exact path="/" component={Schedule} />
                     <Route exact path="/join" component={Join} />
                 </Switch>
-            </Inner>
+            </Main>
         </>
     );
 };
