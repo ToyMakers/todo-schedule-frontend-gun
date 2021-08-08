@@ -1,12 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { SelectDate } from '../components/Scheduler';
+import { SelectDate, Todo, WriteTodo } from '../components/Scheduler';
+
+const exTodo = [
+    {
+        id: 1,
+        para: 'Searching Company for me',
+    },
+    {
+        id: 2,
+        para: 'Take Typescript lecture',
+    },
+    {
+        id: 3,
+        para: 'Define Folder structure',
+    },
+];
 
 function Schedule() {
     return (
         <div>
             <SelectDate />
-            <Link to="/join">가입이동</Link>
+            <WriteTodo />
+            {exTodo.map(val => {
+                const { para } = val;
+                return <Todo plan={para} />;
+            })}
         </div>
     );
 }
