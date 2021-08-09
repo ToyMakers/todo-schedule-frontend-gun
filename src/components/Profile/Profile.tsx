@@ -52,7 +52,6 @@ type profileStatus = {
 };
 
 function Profile({ status }: profileStatus) {
-    console.log(status);
     return (
         <ProfileWrap status={status}>
             <ProfileInfo>

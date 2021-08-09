@@ -55,11 +55,11 @@ const ProfileArrow = styled.div`
     }
 `;
 
-interface IProps {
-    onClick: () => void;
+interface ProfileButtonProps {
+    onClick?: () => void;
 }
 
-function ProfileBtn({ onClick }: IProps) {
+function ProfileButton({ onClick }: ProfileButtonProps) {
     return (
         <ProfileBtnWrap onClick={onClick}>
             <ProfileBtnImg />
@@ -69,4 +69,4 @@ function ProfileBtn({ onClick }: IProps) {
     );
 }
 
-export default ProfileBtn;
+export default ProfileButton;

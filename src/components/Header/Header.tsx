@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Inner from '../common/Inner';
 import Profile from '../Profile/Profile';
-import ProfileBtn from './ProfileBtn';
+import ProfileButton from './ProfileButton';
 
 const HeaderArea = styled.header`
     height: 43px;
@@ -37,7 +37,7 @@ function Header() {
                 <HeaderLogo>
                     <strong>Gune</strong>'s Scheduler
                 </HeaderLogo>
-                <ProfileBtn onClick={onClick} />
+                <ProfileButton onClick={onClick} />
                 <Profile status={profileState} />
             </HeaderInner>
         </HeaderArea>

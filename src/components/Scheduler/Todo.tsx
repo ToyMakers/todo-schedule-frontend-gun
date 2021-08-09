@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
+import { mockTodoType } from '../../../utils/mock/mockTodo.dummy';
 
 const TodoItem = styled.div`
     display: flex;
@@ -114,20 +115,17 @@ const DeleteBtn = styled.button`
     }
 `;
 
-interface IPlanType {
-    plan: String;
-}
-
-function Todo({ plan }: IPlanType) {
-    const [check, setCheck] = useState<boolean>(false);
+function Todo({ para, progress }: mockTodoType) {
+    const [check, setCheck] = useState<boolean>(progress);
+    const toggleCheck = () => setCheck(!check);
     return (
         <TodoItem>
-            <TodoEachItem onClick={() => setCheck(!check)}>
+            <TodoEachItem onClick={toggleCheck}>
                 <TodoCheckBox>
                     <TodoCheck type="checkbox" checked={check} />
                     <TodoCheckLabel checkStatus={check}></TodoCheckLabel>
                 </TodoCheckBox>
-                <TodoPara checkStatus={check}>{plan}</TodoPara>
+                <TodoPara checkStatus={check}>{para}</TodoPara>
             </TodoEachItem>
             <DeleteBtn>Delete</DeleteBtn>
         </TodoItem>
