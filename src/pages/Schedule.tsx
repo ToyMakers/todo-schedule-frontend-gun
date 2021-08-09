@@ -1,9 +1,16 @@
-import * as React from 'react';
+import React from 'react';
+import mockTodo from '../../utils/mock/mockTodo.dummy';
+import { SelectDate, Todo, WriteTodo } from '../components/Scheduler';
 
 function Schedule() {
     return (
         <div>
-            <h1>Scheduler OPEN</h1>
+            <SelectDate />
+            <WriteTodo />
+            {mockTodo.map(val => {
+                const { para, progress } = val;
+                return <Todo para={para} progress={progress} />;
+            })}
         </div>
     );
 }
