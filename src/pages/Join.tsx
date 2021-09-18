@@ -1,7 +1,8 @@
+import { JoinView } from '@Components/Join';
 import React from 'react';
 
 function Join() {
-    return <div>회원가입</div>;
+    return <JoinView />;
 }
 
 export default Join;

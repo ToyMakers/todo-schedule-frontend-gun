@@ -49,10 +49,19 @@ module.exports = webpackEnv => {
                         },
                     ],
                 },
+                {
+                    test: /\.svg$/,
+                    use: ['@svgr/webpack'],
+                },
             ],
         },
         resolve: {
             extensions: ['.ts', '.tsx', '.jsx', '.js', '.json'],
+            alias: {
+                '@': path.resolve(__dirname, 'src/'),
+                '@Pages': path.resolve(__dirname, 'src/pages/'),
+                '@Components': path.resolve(__dirname, 'src/components/'),
+            },
         },
         plugins: [
             new RefreshWebpackPlugin(),

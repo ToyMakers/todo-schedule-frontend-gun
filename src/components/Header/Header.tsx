@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Inner from '../common/Inner';
 import Profile from '../Profile/Profile';
 import ProfileButton from './ProfileButton';
 
+export const headerHeight = 50;
+
 const HeaderArea = styled.header`
-    height: 43px;
+    height: ${headerHeight}px;
     /* border-bottom: 1px solid #ccc; */
     background-color: #000;
 `;
@@ -16,29 +19,52 @@ const HeaderInner = styled(Inner)`
 
 const HeaderLogo = styled.div`
     width: 100%;
-    height: 43px;
+    height: ${headerHeight}px;
     color: #eee;
     font-size: 1.1rem;
     font-weight: 300;
     text-align: center;
-    line-height: 43px;
+    line-height: ${headerHeight}px;
     & strong {
         font-weight: 500;
     }
 `;
 
-function Header() {
+const HeaderJoin = styled.div`
+    display: flex;
+    position: absolute;
+    top: 50%;
+    right: 17px;
+    transform: translateY(-50%);
+    gap: 10px;
+`;
+
+type HeaderLogin = {
+    login: boolean;
+};
+
+function Header({ login }: HeaderLogin) {
     const [profileState, setProfileState] = useState<boolean>(false);
     const onClick = () => setProfileState(!profileState);
-
     return (
         <HeaderArea>
             <HeaderInner>
                 <HeaderLogo>
-                    <strong>Gune</strong>'s Scheduler
+                    <Link to="/">
+                        <strong>{login ? 'Gune' : 'Wonderful Guest'}</strong>'s Scheduler
+                    </Link>
                 </HeaderLogo>
-                <ProfileButton onClick={onClick} />
-                <Profile status={profileState} />
+                {login ? (
+                    <>
+                        <ProfileButton onClick={onClick} />
+                        <Profile status={profileState} />
+                    </>
+                ) : (
+                    <HeaderJoin>
+                        <Link to="/join">JOIN</Link>
+                        <Link to="/login">LOGIN</Link>
+                    </HeaderJoin>
+                )}
             </HeaderInner>
         </HeaderArea>
     );

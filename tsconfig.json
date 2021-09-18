@@ -8,6 +8,12 @@
         "jsx": "react",
         "allowJs": true,
         "strict": true,
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": "./",
+        "paths": {
+            "@/*": ["src/*"],
+            "@Pages/*": ["src/pages/*"],
+            "@Components/*": ["src/components/*"]
+        }
     }
 }

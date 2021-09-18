@@ -20,6 +20,11 @@ const mockTodo: Array<mockTodoType> = [
         para: 'Define Folder structure',
         progress: true,
     },
+    {
+        id: 4,
+        para: 'Commit Push',
+        progress: true,
+    },
 ];
 
 export default mockTodo;

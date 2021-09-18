@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled, { css } from 'styled-components';
-import ProfileImg from '../../asset/images/profile.jpg';
+import ProfileImg from '@/asset/images/profile.jpg';
+import { headerHeight } from '../Header/Header';
+import { Modification } from '@Components/common/Atom';
+import Pencil from '@/asset/images/pencil.svg';
+
+const Pen = styled(Pencil)`
+    width: 11px;
+    height: 11px;
+    position: relative;
+    z-index: 10;
+`;
 
 const ProfileWrap = styled.aside<{ status: boolean }>`
     width: 200px;
     min-height: 500px;
     padding: 0 20px;
     position: absolute;
-    top: 43px;
+    top: ${headerHeight}px;
     right: 0;
     background-color: rgba(0, 0, 0, 0.85);
     ${({ status }) =>
@@ -26,10 +36,10 @@ const ProfileInfo = styled.div`
 `;
 
 const ProfilePhoto = styled.div`
-    margin: 0 auto;
+    position: relative;
     width: 105px;
     height: 105px;
-    overflow: hidden;
+    margin: 0 auto;
     border-radius: 50%;
     background: url(${ProfileImg}) top left/cover no-repeat;
 `;
@@ -47,15 +57,32 @@ const ProfileIntroduce = styled.p`
     line-height: 1.1rem;
 `;
 
+const Upload = styled.input`
+    display: block;
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+`;
+
 type profileStatus = {
     status: boolean;
 };
 
 function Profile({ status }: profileStatus) {
+    const imageUpload = useRef<HTMLInputElement>(null);
+    const uploadEvent = () => imageUpload.current?.click();
     return (
         <ProfileWrap status={status}>
             <ProfileInfo>
-                <ProfilePhoto />
+                <ProfilePhoto>
+                    <Modification onClick={uploadEvent}>
+                        <Pen />
+                    </Modification>
+                    <Upload type="file" ref={imageUpload} />
+                </ProfilePhoto>
                 <ProfileName>Gune</ProfileName>
                 <ProfileIntroduce>
                     👨‍💻 Front-end Engineer

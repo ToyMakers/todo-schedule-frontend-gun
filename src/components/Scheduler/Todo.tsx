@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
-import { mockTodoType } from '../../../utils/mock/mockTodo.dummy';
+import { mockTodoType } from '@/utils/mock/mockTodo.dummy';
 
 const TodoItem = styled.div`
     display: flex;
@@ -91,9 +91,9 @@ const DeleteBtn = styled.button`
     width: 15px;
     height: 15px;
     position: relative;
-    text-indent: -9999px;
-    font-size: 0.1px;
-    color: tranparent;
+    font-size: 1px;
+    color: transparent;
+    overflow: hidden;
 
     &::before,
     &::after {

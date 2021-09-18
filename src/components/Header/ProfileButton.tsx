@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ProfileImg from '../../asset/images/profile.jpg';
+import ProfileImg from '@/asset/images/profile.jpg';
 
 const ProfileBtnWrap = styled.button`
     display: flex;
