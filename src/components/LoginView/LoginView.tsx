@@ -1,6 +1,6 @@
 import React from 'react';
-import MemberItem from '../common/MemberSet/MemberItem';
-import { MemberForm, MemberList, MemberButton } from '../common/MemberSet';
+import MemberItem from '@Components/MemberSet/MemberItem';
+import { MemberForm, MemberList, MemberButton } from '@Components/MemberSet';
 
 function LoginView() {
     return (

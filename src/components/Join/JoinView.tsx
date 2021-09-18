@@ -1,6 +1,6 @@
 import React from 'react';
-import { MemberForm, MemberList, MemberButton } from '../common/MemberSet';
-import MemberItem from '../common/MemberSet/MemberItem';
+import { MemberForm, MemberList, MemberButton } from '../MemberSet';
+import MemberItem from '@Components/MemberSet/MemberItem';
 
 function JoinView() {
     return (

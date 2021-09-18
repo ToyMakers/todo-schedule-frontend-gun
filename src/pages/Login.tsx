@@ -1,5 +1,5 @@
 import React from 'react';
-import { LoginView } from '@Components/Login';
+import LoginView from '@Components/LoginView';
 
 function Login() {
     return <LoginView />;

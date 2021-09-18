@@ -1,4 +1,4 @@
-import { JoinView } from '@/components/Join';
+import { JoinView } from '@Components/Join';
 import React from 'react';
 
 function Join() {

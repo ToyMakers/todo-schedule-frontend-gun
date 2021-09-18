@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button } from '../Atom';
+import { Button } from '../Atoms';
 
 const MemberButton = styled(Button)`
     display: block;

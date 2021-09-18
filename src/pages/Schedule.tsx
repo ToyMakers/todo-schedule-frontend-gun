@@ -1,6 +1,6 @@
 import React from 'react';
-import mockTodo from '../../utils/mock/mockTodo.dummy';
-import { SelectDate, Todo, WriteTodo } from '../components/Scheduler';
+import mockTodo from '@/utils/mock/mockTodo.dummy';
+import { SelectDate, Todo, WriteTodo } from '@Components/Scheduler';
 
 function Schedule() {
     return (

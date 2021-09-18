@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { InputText } from '../Atom';
+import { InputText } from '@Components/Atoms';
 
 const TextList = styled.li`
     display: flex;
@@ -32,5 +32,10 @@ function MemberItem({ label, placeholder }: TextItemType) {
         </TextList>
     );
 }
+
+MemberItem.defaultProps = {
+    label: '기입 내용',
+    placeholder: '16자 이내로 작성',
+};
 
 export default MemberItem;
